@@ -93,7 +93,7 @@ class ArraySlice
         $result = array();
         self::adjustSlice($length, $start, $stop, $step);
         $i = $start;
-        while ($step < 0 ? ($i > $stop) : ($i < $stop)) {
+        while ($step < 0 ? ($i >= $stop) : ($i <= $stop)) {
             $result[] = $i;
             $i += $step;
         }
